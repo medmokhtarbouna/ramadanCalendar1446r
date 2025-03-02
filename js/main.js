@@ -18,6 +18,9 @@ let cont = "";
 cont = `<table>`;
 cont += `<tr class="font-color-yellow font-size-small trHeader">`;
 for (let i = 0; i < header.length; i++) {
+  if (header[i] == "الإفطار" || header[i] == "الإمساك") {
+    continue;
+  }
   cont += ` <td class="tHeader">${header[i]}</td>`;
 }
 
@@ -25,6 +28,9 @@ cont += `</tr>`;
 for (let i = 0; i < data.length; i++) {
   cont += `<tr>`;
   for (let j = 0; j < 10; j++) {
+    if (j == 1 || j == 7) {
+      continue;
+    }
     cont += ` <td>${data[i][j]}</td>`;
   }
   cont += `</tr>`;
